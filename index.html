@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Blog</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .site-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        /* Main content area */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        /* Blog posts section */
+        .blog-posts {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        article {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .post-header {
+            padding: 20px 20px 0;
+        }
+        
+        .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .post-content {
+            padding: 0 20px 20px;
+        }
+        
+        .post-content p {
+            margin-bottom: 15px;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        /* Sidebar */
+        aside {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .sidebar-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .about-me img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .about-me p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #555;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            color: #0066cc;
+        }
+        
+        .recent-posts ul, .categories ul {
+            list-style: none;
+        }
+        
+        .recent-posts li, .categories li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .recent-posts li:last-child, .categories li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            
+            .site-title {
+                font-size: 2rem;
+            }
+            
+            .site-description {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">My Personal Blog</h1>
+        <p class="site-description">Thoughts, ideas, and everything in between</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="blog-posts">
+            <!-- Blog Post 1 -->
+            <article>
+                <div class="post-header">
+                    <h2 class="post-title"><a href="post.html">Getting Started with GitHub Pages</a></h2>
+                    <div class="post-meta">
+                        <span class="post-date">March 15, 2025</span> • 
+                        <span class="post-category">Web Development</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>GitHub Pages is a fantastic way to host your personal blog or project website for free. In this post, I'll walk through the process of setting up your own site and customizing it to match your personal style.</p>
+                    <p>The best part about GitHub Pages is that it integrates seamlessly with your GitHub repositories, making it easy to update your content...</p>
+                    <a href="post.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 2 -->
+            <article>
+                <div class="post-header">
+                    <h2 class="post-title"><a href="post.html">My Favorite Development Tools in 2025</a></h2>
+                    <div class="post-meta">
+                        <span class="post-date">March 10, 2025</span> • 
+                        <span class="post-category">Tools</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>As a developer, having the right tools can make all the difference in your workflow and productivity. Here are some of my favorite development tools that I've been using this year.</p>
+                    <p>From code editors to version control systems, I'll share my setup and why these tools have earned a permanent place in my development environment.</p>
+                    <a href="post.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+            
+            <!-- Blog Post 3 -->
+            <article>
+                <div class="post-header">
+                    <h2 class="post-title"><a href="post.html">Learning Machine Learning: My Journey</a></h2>
+                    <div class="post-meta">
+                        <span class="post-date">March 5, 2025</span> • 
+                        <span class="post-category">Machine Learning</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    <p>Machine learning has always fascinated me, but getting started can be intimidating. In this post, I'll share my learning journey, from the basics to building my first model.</p>
+                    <p>I'll cover the resources I found most helpful, challenges I faced, and some interesting projects I've completed along the way.</p>
+                    <a href="post.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </section>
+        
+        <aside>
+            <!-- About Me Section -->
+            <div class="sidebar-section about-me">
+                <h3 class="sidebar-title">About Me</h3>
+                <img src="/api/placeholder/200/200" alt="Profile Picture">
+                <p>Hello! I'm a developer, writer, and tech enthusiast. This blog is where I share my thoughts on technology, programming, and personal projects.</p>
+                <div class="social-links">
+                    <a href="#" title="GitHub">GitHub</a>
+                    <a href="#" title="Twitter">Twitter</a>
+                    <a href="#" title="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+            
+            <!-- Recent Posts -->
+            <div class="sidebar-section recent-posts">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul>
+                    <li><a href="#">Getting Started with GitHub Pages</a></li>
+                    <li><a href="#">My Favorite Development Tools in 2025</a></li>
+                    <li><a href="#">Learning Machine Learning: My Journey</a></li>
+                    <li><a href="#">How to Build a Personal Blog with Jekyll</a></li>
+                    <li><a href="#">The Importance of Version Control</a></li>
+                </ul>
+            </div>
+            
+            <!-- Categories -->
+            <div class="sidebar-section categories">
+                <h3 class="sidebar-title">Categories</h3>
+                <ul>
+                    <li><a href="#">Web Development</a></li>
+                    <li><a href="#">Machine Learning</a></li>
+                    <li><a href="#">Tools</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Tutorials</a></li>
+                </ul>
+            </div>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
