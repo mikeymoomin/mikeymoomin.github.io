@@ -1,11 +1,9 @@
 ---
 layout: post
-title: "It's Easay to get Started"
+title: "It's Easy to get Started"
 date: 2025-03-17 08:00:00
 categories: learning
 ---
-
-# It's Easy to Get Started! 
 
 ## Getting the Dataset
 
