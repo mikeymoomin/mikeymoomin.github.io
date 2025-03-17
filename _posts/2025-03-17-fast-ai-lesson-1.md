@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fast.ai Lesson 1"
+title: "It's Easay to get Started"
 date: 2025-03-17
 categories: learning
 ---
