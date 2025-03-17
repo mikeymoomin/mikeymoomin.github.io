@@ -1,48 +1,24 @@
 ---
 layout: post
-title: "Beginning My CS Learning Journey"
+title: "Beginning My ML Learning Journey"
 date: 2025-03-17
 categories: learning
 ---
 
-# Beginning My CS Learning Journey
+# Beginning My ML Learning Journey
 
-As a Chartered Accountant, I've spent years working with financial systems and data, but I've always been curious about the technology that powers these systems. That curiosity finally led me to take the plunge into computer science learning.
+In January 2024, I officially became a Chartered Accountant. While I don't dislike my current role, I've always dreamed of venturing out on my own. One consistent source of envy was seeing people create anything imaginable just by knowing how to code. Determined to turn envy into action, I learned Python through several small projects and Harvard's CS50P course. The explosive growth and incredible potential of Generative AI further ignited my interest in Machine Learning—a field I've been trying to grasp properly for a while now.
 
-## Why I Decided to Learn CS
+## My Journey into Machine Learning (so far!)
 
-There are several reasons I've decided to embark on this journey:
+Initially, I began by enrolling in Andrew Ng's highly recommended [Machine Learning course](https://www.coursera.org/specializations/machine-learning-introduction?utm_medium=sem&utm_source=gg&utm_campaign=b2c_emea_machine-learning-introduction_stanford_ftcof_specializations_cx_dr_bau_gg_pmax_pr_s1_en_m_hyb_24-04_x&campaignid=21160830418&adgroupid=&device=c&keyword=&matchtype=&network=x&devicemodel=&creativeid=&assetgroupid=6495613033&targetid=&extensionid=&placement=&gad_source=1&gbraid=0AAAAADdKX6Zd3NTMHGisgaJ15D5g1Mi1m&gclid=Cj0KCQjwkN--BhDkARIsAD_mnIomAzX4mBHBvSTr3QEAMyAr1GYIRIYKdYl4q87r3NF5aIH3D_7G4uMaAqkHEALw_wcB) on Coursera. Unfortunately, this didn't click for me. The course quickly plunged into the mathematics behind neural networks—calculating weights and biases using calculus and the chain rule. Although intriguing (and despite having enjoyed A-Level Maths!), I was eager to start coding neural networks directly. Without practical implementation, the theoretical maths quickly faded from memory because its real-world application wasn't clear to me.
 
-1. **Professional Development**: Understanding the technical underpinnings of the financial software I use daily will make me more effective at my job.
+A few months later, I revisited my ML journey through [STATQuest](https://www.youtube.com/playlist?list=PLblh5JKOoLUICTaGLRoHQDuF_7q2GfuJF) on YouTube, an excellent free resource. STATQuest significantly improved my mathematical understanding, clearly explaining complex concepts. Yet again, however, I faced a similar issue—I understood the theory but still lacked the practical skills needed to implement deep learning models myself.
 
-2. **Problem-Solving Skills**: Computer science teaches structured problem-solving approaches that can be applied in many areas.
+Then I discovered [Fast.ai](https://course.fast.ai). After persistent recommendations from a friend and colleague, I finally took the plunge, starting with Lesson 1 — and it felt like striking gold! This was exactly what I'd been looking for. Jeremy Howard immediately immerses you in building practical models, such as an image classifier, from the very beginning. What truly resonated with me was the ease with which Jeremy breaks down barriers, demystifying Machine Learning and encouraging learners to quickly create and deploy their own models.
 
-3. **Future-Proofing**: As technology continues to transform the accounting profession, having technical skills will be increasingly valuable.
+## Purpose of This Blog
 
-## My Learning Plan
+Fast.ai inspired me to start this blog as a structured way of consolidating my learning. Here, I'll document my experiences and insights from the Fast.ai course and other broader CS courses I'm undertaking alongside it. Additionally, I'll maintain another blog on Medium, where I'll share thought pieces and explore interesting applications of AI as opportunities arise. You can find that second blog [here](https://medium.com/@michaeljward97).
 
-I'm starting with these fundamental areas:
-
-- **Programming Basics**: Learning Python as my first language
-- **Web Development**: Understanding how websites and web applications work
-- **Data Structures & Algorithms**: The building blocks of computer science
-- **Databases**: How data is stored, retrieved, and managed
-
-## First Steps
-
-I've already completed my first Python course and built a simple calculator application. It's amazing how satisfying it is to write code that actually works!
-
-```python
-def calculate_tax(income, rate):
-    return income * rate / 100
-
-# Example usage
-annual_income = 50000
-tax_rate = 20
-tax_amount = calculate_tax(annual_income, tax_rate)
-print(f"Tax amount: £{tax_amount}")
-```
-
-## Next Steps
-
-Next week, I'll be diving into HTML and CSS to start understanding web development. I'm planning to document my progress with each new technology I
+I'm genuinely excited to see where this journey leads, and I invite you to join me!
