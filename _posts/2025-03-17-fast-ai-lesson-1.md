@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "It's Easay to get Started"
-date: 2025-03-17
+date: 2025-03-17 08:00:00
 categories: learning
 ---
 
