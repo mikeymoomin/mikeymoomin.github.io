@@ -9,8 +9,233 @@ layout: default
     <title>{{ page.title }} | My Personal Blog</title>
     <!-- Include the same CSS from your index.html -->
     <style>
-        /* Copy the entire CSS from your index.html */
-        /* ... */
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .site-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        /* Main content area */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        /* Blog posts section */
+        .blog-posts {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        article {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .post-header {
+            padding: 20px 20px 0;
+        }
+        
+        .post-title {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+        }
+        
+        .post-meta {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .post-content {
+            padding: 0 20px 20px;
+        }
+        
+        .post-content p {
+            margin-bottom: 15px;
+        }
+        
+        .post-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin: 10px 0;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        /* Sidebar */
+        aside {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .sidebar-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .about-me img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .about-me p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #555;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            color: #0066cc;
+        }
+        
+        .recent-posts ul, .categories ul {
+            list-style: none;
+        }
+        
+        .recent-posts li, .categories li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .recent-posts li:last-child, .categories li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            
+            .site-title {
+                font-size: 2rem;
+            }
+            
+            .site-description {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
     </style>
 </head>
 <body>
