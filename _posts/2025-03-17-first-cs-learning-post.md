@@ -5,8 +5,6 @@ date: 2025-03-17 07:00:00
 categories: learning
 ---
 
-# Beginning My ML Learning Journey
-
 In January 2024, I officially became a Chartered Accountant. While I don't dislike my current role, I've always dreamed of venturing out on my own. One consistent source of envy was seeing people create anything imaginable just by knowing how to code. Determined to turn envy into action, I learned Python through several small projects and Harvard's CS50P course. The explosive growth and incredible potential of Generative AI further ignited my interest in Machine Learning—a field I've been trying to grasp properly for a while now.
 
 ## My Journey into Machine Learning (so far!)
