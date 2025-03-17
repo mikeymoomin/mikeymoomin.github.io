@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Beginning My ML Learning Journey"
-date: 2025-03-17
+date: 2025-03-17 07:00:00
 categories: learning
 ---
 
