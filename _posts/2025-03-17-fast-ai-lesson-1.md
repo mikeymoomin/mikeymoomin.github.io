@@ -11,8 +11,7 @@ categories: learning
 
 Lesson 1 shows you how to great a model that classifies images - the lesson talks the viewer through forming a 'Is it a bird?' identifier model. There were a few mind = blown moments in this lecture the first was the **Duck-Duck-Go image search API**. Here, the API enabled me to quickly and efficiently put together a small dataset of images taken directly from a web search on the Duck-Duck-Go (DDG) browser. This was perforemd in the following code:
 
-```
-python
+```python
 # Install/import dependancies and define functions 
 !pip install -Uqq fastai 'duckduckgo_search>=6.2'
 from duckduckgo_search import DDGS
@@ -39,8 +38,7 @@ Here, we can see a few pretty neat things, the importing of the DDG search funct
 
 It's worth noting here that not all images will have successfully downloaded and therefore we should remove them from the dataset with the following code:
 
-```
-python
+```python
 failed = verify_images(get_image_files(path))
 failed.map(Path.unlink)
 len(failed)
@@ -49,8 +47,7 @@ len(failed)
 
 So, we now have a dataset of up to 200 images of birds, and up to 200 images of forest and general woodland. We now need to train the model. We can do this with DataLoaders, specifically the following code:
 
-```
-python
+```python
 dls = DataBlock(
     blocks=(ImageBlock, CategoryBlock), 
     get_items=get_image_files, 
@@ -62,34 +59,29 @@ dls = DataBlock(
 
 There are a few things going on in that chunck of code, and it's important to understand each bit and its purpose. 
 
-```
-python
+```python
 blocks=(ImageBlock, CategoryBlock),
 ```
 First, the above code tells the DataLoader that our input is an image and out output will be a category - in this case it'll be either a 'Forest' or a 'Bird';
 
-```
-python
+```python
 get_items=get_image_files,
 ```
 Then, the above code effectively hands the DataLoader the images to use for testing and training by returning a list of all image file paths;
 
-```
-python
+```python
 splitter=RandomSplitter(valid_pct=0.2, seed=42),
 ```
 
 Next, we are defining the split of the data between the training and testing set randomly with 20% of the input impages being used as testing data;
 
-```
-python
+```python
 get_y=parent_label,
 ```
 
 We are then labelling the images with the name of the parent file that the image is situated in - in this case 'Bird' or 'Forest';
 
-```
-python
+```python
 item_tfms=[Resize(192, method='squish')]
 ```
 
@@ -101,8 +93,7 @@ Here, we use the resnet18 model. This is a well known convolutional neural netwo
 
 With the following code therefore,  we can initialise a CNN-based learner designed specifically for vision tasks such as image classification for our use case. This is done easily by using the fast.ai function 'vision_learner' which initially asks for our DataLoader (dls) in order to pass through our bird and forest dataset, then parsing the model resnet18 before defining our metric to measure success - in this case error_rate. After that, we then finetune that CNN with our data using the fine_tune method which in this case over the course of 3 epochs. This works by updating the models weights and biases by calculating the loss and using backpropagation - This was another lightbulb moment that made [Andrew Ng and STATQuests's](https://mikeymoomin.github.io/2025/03/17/first-cs-learning-post/) lessons start to make sense!
 
-```
-python
+```python
 learn = vision_learner(dls, resnet18, metrics=error_rate)
 learn.fine_tune(3)
 ```
