@@ -1,6 +1,8 @@
-title: Your Blog Title
-description: Your blog description
-theme: minima  # or any other GitHub Pages supported theme
+# Site settings
+title: My Personal Blog
+description: A place that I document my key learnings on my CS learning journey
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
@@ -9,3 +11,24 @@ permalink: /:year/:month/:day/:title/
 # Pagination
 paginate: 5
 paginate_path: "/page:num/"
+
+# Collections
+collections:
+  projects:
+    output: true
+    permalink: /projects/:path/
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  -
+    scope:
+      path: ""
+      type: "projects"
+    values:
+      layout: "project"
