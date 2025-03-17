@@ -1,0 +1,69 @@
+---
+layout: default
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }} | My Personal Blog</title>
+    <!-- Include the same CSS from your index.html -->
+    <style>
+        /* Copy the entire CSS from your index.html */
+        /* ... */
+    </style>
+</head>
+<body>
+    <!-- Header with navigation - same as index.html -->
+    <header>
+        <h1 class="site-title">My Personal Blog</h1>
+        <p class="site-description">A place that I document my key learnings on my CS learning journey</p>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog.html">Blog</a></li>
+                <li><a href="/projects.html">Projects</a></li>
+                <li><a href="/about.html">About</a></li>
+                <li><a href="/contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="blog-posts">
+            <article class="full-post">
+                <div class="post-header">
+                    <h1 class="post-title">{{ page.title }}</h1>
+                    <div class="post-meta">
+                        <span class="post-date">{{ page.date | date: "%B %d, %Y" }}</span> • 
+                        <span class="post-category">{{ page.categories | first }}</span>
+                    </div>
+                </div>
+                <div class="post-content">
+                    {{ content }}
+                </div>
+                <div class="post-navigation">
+                    <div class="post-navigation-links">
+                        {% if page.previous.url %}
+                        <a class="prev-post" href="{{ page.previous.url }}">&larr; {{ page.previous.title }}</a>
+                        {% endif %}
+                        
+                        {% if page.next.url %}
+                        <a class="next-post" href="{{ page.next.url }}">{{ page.next.title }} &rarr;</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </article>
+        </section>
+        
+        <!-- Sidebar - same as index.html -->
+        <aside>
+            <!-- ... copy the aside content from index.html ... -->
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} My Personal Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
