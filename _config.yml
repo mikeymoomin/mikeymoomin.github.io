@@ -1,0 +1,11 @@
+title: Your Blog Title
+description: Your blog description
+theme: minima  # or any other GitHub Pages supported theme
+
+# Build settings
+markdown: kramdown
+permalink: /:year/:month/:day/:title/
+
+# Pagination
+paginate: 5
+paginate_path: "/page:num/"
