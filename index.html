@@ -1,3 +1,7 @@
+---
+layout: default
+title: My Personal Blog
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -251,53 +255,21 @@
     
     <main>
         <section class="blog-posts">
-            <!-- Blog Post 1 -->
-            <article>
+            {% for post in site.posts %}
+              <article>
                 <div class="post-header">
-                    <h2 class="post-title"><a href="post.html">Getting Started with GitHub Pages</a></h2>
-                    <div class="post-meta">
-                        <span class="post-date">March 15, 2025</span> • 
-                        <span class="post-category">Web Development</span>
-                    </div>
+                  <h2 class="post-title"><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                  <div class="post-meta">
+                    <span class="post-date">{{ post.date | date: "%B %d, %Y" }}</span> • 
+                    <span class="post-category">{{ post.categories | first }}</span>
+                  </div>
                 </div>
                 <div class="post-content">
-                    <p>GitHub Pages is a fantastic way to host your personal blog or project website for free. In this post, I'll walk through the process of setting up your own site and customizing it to match your personal style.</p>
-                    <p>The best part about GitHub Pages is that it integrates seamlessly with your GitHub repositories, making it easy to update your content...</p>
-                    <a href="post.html" class="read-more">Read More →</a>
+                  {{ post.excerpt }}
+                  <a href="{{ post.url }}" class="read-more">Read More →</a>
                 </div>
-            </article>
-            
-            <!-- Blog Post 2 -->
-            <article>
-                <div class="post-header">
-                    <h2 class="post-title"><a href="post.html">My Favorite Development Tools in 2025</a></h2>
-                    <div class="post-meta">
-                        <span class="post-date">March 10, 2025</span> • 
-                        <span class="post-category">Tools</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>As a developer, having the right tools can make all the difference in your workflow and productivity. Here are some of my favorite development tools that I've been using this year.</p>
-                    <p>From code editors to version control systems, I'll share my setup and why these tools have earned a permanent place in my development environment.</p>
-                    <a href="post.html" class="read-more">Read More →</a>
-                </div>
-            </article>
-            
-            <!-- Blog Post 3 -->
-            <article>
-                <div class="post-header">
-                    <h2 class="post-title"><a href="post.html">Learning Machine Learning: My Journey</a></h2>
-                    <div class="post-meta">
-                        <span class="post-date">March 5, 2025</span> • 
-                        <span class="post-category">Machine Learning</span>
-                    </div>
-                </div>
-                <div class="post-content">
-                    <p>Machine learning has always fascinated me, but getting started can be intimidating. In this post, I'll share my learning journey, from the basics to building my first model.</p>
-                    <p>I'll cover the resources I found most helpful, challenges I faced, and some interesting projects I've completed along the way.</p>
-                    <a href="post.html" class="read-more">Read More →</a>
-                </div>
-            </article>
+              </article>
+            {% endfor %}
         </section>
         
         <aside>
@@ -317,11 +289,9 @@
             <div class="sidebar-section recent-posts">
                 <h3 class="sidebar-title">Recent Posts</h3>
                 <ul>
-                    <li><a href="#">Getting Started with GitHub Pages</a></li>
-                    <li><a href="#">My Favorite Development Tools in 2025</a></li>
-                    <li><a href="#">Learning Machine Learning: My Journey</a></li>
-                    <li><a href="#">How to Build a Personal Blog with Jekyll</a></li>
-                    <li><a href="#">The Importance of Version Control</a></li>
+                    {% for post in site.posts limit:5 %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
             
@@ -329,18 +299,16 @@
             <div class="sidebar-section categories">
                 <h3 class="sidebar-title">Categories</h3>
                 <ul>
-                    <li><a href="#">Web Development</a></li>
-                    <li><a href="#">Machine Learning</a></li>
-                    <li><a href="#">Tools</a></li>
-                    <li><a href="#">Projects</a></li>
-                    <li><a href="#">Tutorials</a></li>
+                    {% for category in site.categories %}
+                    <li><a href="/categories/{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
         </aside>
     </main>
     
     <footer>
-        <p>&copy; 2025 My Personal Blog. All rights reserved.</p>
+        <p>&copy; {% raw %}{{ site.time | date: '%Y' }}{% endraw %} My Personal Blog. All rights reserved.</p>
     </footer>
 </body>
 </html>
