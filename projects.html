@@ -1,0 +1,365 @@
+---
+layout: default
+title: Projects
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | My Personal Blog</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        a {
+            color: #0066cc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        a:hover {
+            color: #004080;
+            text-decoration: underline;
+        }
+        
+        /* Header styles */
+        header {
+            padding: 40px 0 20px;
+            border-bottom: 1px solid #eee;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .site-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #222;
+        }
+        
+        .site-description {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        
+        /* Navigation */
+        nav {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        nav a {
+            font-size: 1.1rem;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav a:hover {
+            background-color: #f0f0f0;
+            text-decoration: none;
+        }
+        
+        /* Main content area */
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        /* Projects section */
+        .projects-section {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            margin-bottom: 30px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 30px;
+            overflow: hidden;
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #0066cc;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background-color: #e9f5ff;
+            color: #0066cc;
+            padding: 3px 10px;
+            border-radius: 15px;
+            font-size: 0.85rem;
+        }
+        
+        .project-description {
+            margin-bottom: 20px;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            font-weight: 500;
+        }
+        
+        .project-link:before {
+            content: '→';
+            margin-right: 5px;
+        }
+        
+        /* Sidebar */
+        aside {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .sidebar-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .sidebar-title {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .about-me img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: block;
+            object-fit: cover;
+        }
+        
+        .about-me p {
+            margin-bottom: 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-links a {
+            color: #555;
+            font-size: 1.2rem;
+        }
+        
+        .social-links a:hover {
+            color: #0066cc;
+        }
+        
+        .recent-posts ul, .categories ul {
+            list-style: none;
+        }
+        
+        .recent-posts li, .categories li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .recent-posts li:last-child, .categories li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 1px solid #eee;
+            color: #666;
+        }
+        
+        /* Responsive design */
+        @media (max-width: 768px) {
+            main {
+                flex-direction: column;
+            }
+            
+            .site-title {
+                font-size: 2rem;
+            }
+            
+            .site-description {
+                font-size: 1rem;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="site-title">My Personal Blog</h1>
+        <p class="site-description">A place that I document my key learnings on my CS learning journey</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="projects-section">
+            <h2 class="page-title">My Projects</h2>
+            
+            <!-- Project 1 -->
+            <div class="project-card">
+                <h3 class="project-title">Personal Learning Blog</h3>
+                <div class="project-tags">
+                    <span class="project-tag">HTML</span>
+                    <span class="project-tag">CSS</span>
+                    <span class="project-tag">Jekyll</span>
+                </div>
+                <p class="project-description">A static blog built with Jekyll and GitHub Pages to document my learning journey in computer science. Features responsive design and custom layouts.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">View Site</a>
+                    <a href="#" class="project-link">GitHub Repo</a>
+                </div>
+            </div>
+            
+            <!-- Project 2 -->
+            <div class="project-card">
+                <h3 class="project-title">Python Data Analysis Tool</h3>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">Pandas</span>
+                    <span class="project-tag">Data Analysis</span>
+                </div>
+                <p class="project-description">A command-line tool that processes financial datasets using Pandas and generates insightful visualizations. Built as part of my data science learning path.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">GitHub Repo</a>
+                    <a href="#" class="project-link">Documentation</a>
+                </div>
+            </div>
+            
+            <!-- Project 3 -->
+            <div class="project-card">
+                <h3 class="project-title">Machine Learning Experiment</h3>
+                <div class="project-tags">
+                    <span class="project-tag">Python</span>
+                    <span class="project-tag">TensorFlow</span>
+                    <span class="project-tag">ML</span>
+                </div>
+                <p class="project-description">An exploration of basic machine learning concepts implemented with TensorFlow. Includes models for classification and regression on publicly available datasets.</p>
+                <div class="project-links">
+                    <a href="#" class="project-link">GitHub Repo</a>
+                    <a href="#" class="project-link">Demo</a>
+                </div>
+            </div>
+            
+            <!-- Add more project cards as needed -->
+        </section>
+        
+        <aside>
+            <!-- About Me Section -->
+            <div class="sidebar-section about-me">
+                <h3 class="sidebar-title">About Me</h3>
+                <img src="/api/placeholder/200/200" alt="Profile Picture">
+                <p>Hello! I'm a Chartered Accountant based in the UK looking to throw myself into the deepend of CS learning</p>
+                <div class="social-links">
+                    <a href="#" title="GitHub">GitHub</a>
+                    <a href="#" title="Twitter">Twitter</a>
+                    <a href="#" title="LinkedIn">LinkedIn</a>
+                </div>
+            </div>
+            
+            <!-- Recent Posts -->
+            <div class="sidebar-section recent-posts">
+                <h3 class="sidebar-title">Recent Posts</h3>
+                <ul>
+                    {% for post in site.posts limit:5 %}
+                    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            
+            <!-- Categories -->
+            <div class="sidebar-section categories">
+                <h3 class="sidebar-title">Categories</h3>
+                <ul>
+                    {% for category in site.categories %}
+                    <li><a href="/categories/{{ category[0] | slugify }}">{{ category[0] }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </aside>
+    </main>
+    
+    <footer>
+        <p>&copy; {{ site.time | date: '%Y' }} My Personal Blog. All rights reserved.</p>
+    </footer>
+</body>
+</html>
