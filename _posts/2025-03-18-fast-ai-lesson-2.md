@@ -7,7 +7,7 @@ categories: learning
 
 ## The idea
 
-A Deepfake a video of a person in which their face or body has been digitally altered so that they appear to be someone else. Auditors and Finance professionals are increasingly warey of the threat of fraud on account of this technology. Indeed, British engineering firm Arup were recently [scamed out of $25 million](https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk/index.html) after a finance worker sent a payment to a scammer after having gained acceptance from who he thought was the CFO and other members of staff - all of whom turned out to be deepfake re-creations.
+A Deepfake a video of a person in which their face or body has been digitally altered so that they appear to be someone else. Auditors and Finance professionals are increasingly warey of the threat of fraud on account of this technology. Indeed, British engineering firm Arup were recently [scammed out of $25 million](https://edition.cnn.com/2024/05/16/tech/arup-deepfake-scam-loss-hong-kong-intl-hnk/index.html) after a finance worker sent a payment to a scammer after having gained acceptance from who he thought was the CFO and other members of staff - all of whom turned out to be deepfake re-creations.
 
 Furthermore, the risk of Deepfakes infultrating the politics in the West opens the door for rampant misinformation and for bad actors to to act maliciously. The question is raised as to how we can combat this new technology - I put to you that Neural Networks may have a role to play in this.
 
